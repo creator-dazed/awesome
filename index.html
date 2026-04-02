@@ -1,25 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ja">
 <head>
-
-    <meta charaset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    
-	<style>
-        body { 
-            margin: 2em auto; 
-            width: 600px; 
-            font: 24px;
+    <style>
+        body {
+            margin: 2em auto;
+            max-width: 600px;
+            /* 中央寄せを機能させるために追加 */
+            padding: 0 20px;
+        }
+
+        p {
+            color: #FF0019;
+            /* fontではなくfont-sizeを指定。単位(px)も忘れずに */
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* marqueeタグの代わりとなるアニメーション（推奨） */
+        .scroll-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left 10s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        .container {
+            overflow: hidden;
+            border: 1px solid #eee;
         }
     </style>
-
-
 </head>
-
 <body>
-    <p><marquee><font color="red">Hello World!</font></marquee></p>
+    <div class="container">
+        <p class="scroll-text">Hello World!</p>
+    </div>
 </body>
-
 </html>
